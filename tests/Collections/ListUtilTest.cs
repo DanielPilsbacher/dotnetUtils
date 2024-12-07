@@ -1,7 +1,7 @@
-using src;
+using src.Collections;
 using System.Collections.Generic;
 
-namespace tests;
+namespace tests.Collections;
 
 public class Tests
 {

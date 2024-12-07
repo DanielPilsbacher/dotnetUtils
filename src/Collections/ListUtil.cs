@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace src;
+namespace src.Collections;
 
 public class ListUtil
 {
@@ -10,6 +10,6 @@ public class ListUtil
         {
             return new List<T>();
         }
-        return ts;;
+        return ts;
     }
 }
