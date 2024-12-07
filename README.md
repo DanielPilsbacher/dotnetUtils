@@ -1,2 +1,2 @@
 # dotnetUtils
-Development utils for dotnet development. 
+Utils for dotnet development. 
