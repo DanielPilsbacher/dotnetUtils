@@ -1,4 +1,4 @@
-namespace src.Collections;
+﻿namespace SystemUp.DotnetUtils.Collections;
 
 public class ListUtil
 {

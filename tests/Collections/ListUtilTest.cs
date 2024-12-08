@@ -1,14 +1,9 @@
-using src.Collections;
+using SystemUp.DotnetUtils.Collections;
 
 namespace tests.Collections;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
     public void GetListOrEmptyTest()
     {
