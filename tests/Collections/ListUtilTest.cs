@@ -1,5 +1,4 @@
 using src.Collections;
-using System.Collections.Generic;
 
 namespace tests.Collections;
 

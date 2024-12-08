@@ -1,5 +1,3 @@
-﻿using System.Collections.Generic;
-
 namespace src.Collections;
 
 public class ListUtil
