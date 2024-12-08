@@ -7,7 +7,7 @@ Utils for dotnet development.
 ##  Create project an test structure
 
 ###  2024-12-07 11:42
-Based on [Unit testing C# with NUnit and .NET Core](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit) and [# Organize your project to support both .NET Framework and .NET](https://learn.microsoft.com/en-us/dotnet/core/porting/project-structure)
+Based on [Unit testing C# with NUnit and .NET Core](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit) and [Organize your project to support both .NET Framework and .NET](https://learn.microsoft.com/en-us/dotnet/core/porting/project-structure)
 - dotnet new sln
 - md src
 - cd src
@@ -26,4 +26,5 @@ Based on [Unit testing C# with NUnit and .NET Core](https://learn.microsoft.com/
 - ren UnitTest1.cs ListUtilTest.cs
 - // write testcode for ListUtilTest.cs
 - cd ..
-- dotnet build test
+- dotnet build
+- dotnet test
