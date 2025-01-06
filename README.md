@@ -4,9 +4,9 @@ Utils for dotnet development.
 ##  Prerequisites
 - .NET 8.0 or later versions
 
-##  Create project an test structure
+##  Create project and test structure
 
-###  2024-12-07 11:42
+###  LOG entries 2024-12-07 11:42
 Based on [Unit testing C# with NUnit and .NET Core](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit) and [Organize your project to support both .NET Framework and .NET](https://learn.microsoft.com/en-us/dotnet/core/porting/project-structure)
 - dotnet new sln
 - md src
