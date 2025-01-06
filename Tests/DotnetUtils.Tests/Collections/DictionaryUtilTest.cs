@@ -1,7 +1,10 @@
 using DotNetUtils.Collections;
 
+#pragma warning disable
+
 namespace Tests.DotnetUtils.Collections
 {
+
     public class DictionaryUtilTest
     {
         [Test]
