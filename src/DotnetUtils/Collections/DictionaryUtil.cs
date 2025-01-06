@@ -12,14 +12,24 @@ public class DictionaryUtil
     /// Also consider alternative solutions like try-catch, codereviewing and further techniques.<br />
     /// Example foreach-loop:
     /// <code>
-    /// ////////////////////////////////////////////////////////////////////
-    /// Dictionary<int, string> keyValues = new Dictionary<int, string>();
-    /// keyValues[2] = "Entry 2";   // OK here but whats with [1] and [2].
-    /// Assert.That(keyValues[1], Is.Null);
-    /// {
-    ///     // do awesome stuff
-    /// }
-    /// ////////////////////////////////////////////////////////////////////
+    /// // Problem /////////////////////////////////////////////////////////////////////////////////////
+    /// Dictionary<int, string> keyValues;  // will never be initialized because of defined Use-Case.
+    /// // ... later
+    /// keyValues[1] = "Entry 1";           // throws exception
+    /// ////////////////////////////////////////////////////////////////////////////////////////////////
+    /// </code>
+    /// // Problem /////////////////////////////////////////////////////////////////////////////////////
+    /// Dictionary<int, string> keyValues;  // initialized later
+    /// // ... but problem with key-object
+    /// keyValues[null] = "Entry 1";        // throws exception
+    /// ////////////////////////////////////////////////////////////////////////////////////////////////
+    /// </code>
+    /// <code>
+    /// // Solution ////////////////////////////////////////////////////////////////////////////////////
+    /// Dictionary<int, string> keyValues;  // will never be initialized because of defined Use-Case.
+    /// // ... later
+    /// DictionaryUtil.AddOrUpdateByKey(keyValues, 1, "Entry 1");   // will not throw exception
+    /// ////////////////////////////////////////////////////////////////////////////////////////////////
     /// </code>
     /// </summary>
     /// <typeparam name="TKey">Any type for <paramref name="key"/>. If null no assignement will happen.</typeparam>
