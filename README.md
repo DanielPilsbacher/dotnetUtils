@@ -1,12 +1,13 @@
 #  dotnetUtils
-Utils for dotnet development.
+## Utils for dotnet development
+This project might be helpfull for C# developers who run into similar problems and solution problems as the developer of this project do.
 
 ##  Prerequisites
 - .NET 8.0 or later versions
 
 ##  Create project and test structure
 
-###  LOG entries 2024-12-07 11:42
+###  LOG entry 2024-12-07 11:42
 Based on [Unit testing C# with NUnit and .NET Core](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit) and [Organize your project to support both .NET Framework and .NET](https://learn.microsoft.com/en-us/dotnet/core/porting/project-structure)
 - dotnet new sln
 - md src
