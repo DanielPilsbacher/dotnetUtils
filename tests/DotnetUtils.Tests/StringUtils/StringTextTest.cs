@@ -1,11 +1,26 @@
 using System.Diagnostics;
-using System.Reflection.Metadata;
 using DotNetUtils.StringUtils;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace DotNetUtils.Test.StringUtils;
 
 public class StringTextTest
 {
+    private readonly Logger _log;
+
+    public StringTextTest()
+    {
+        LoggingConfiguration config;
+        ConsoleTarget logconsole;
+        config = new LoggingConfiguration();
+        logconsole = new ConsoleTarget("logconsole");                    
+        config.AddRule(LogLevel.Trace, LogLevel.Fatal, logconsole);
+        LogManager.Configuration = config;
+        _log = LogManager.GetCurrentClassLogger();
+    }
+
     [Test]
     public void Test()
     {
@@ -19,7 +34,7 @@ public class StringTextTest
     [Test]
     public void PerformanceTest()
     {
-        Console.WriteLine("Run unittest " + nameof(StringTextTest) + "." + nameof(PerformanceTest));
+        _log.Debug("Run unittest " + nameof(StringTextTest) + "." + nameof(PerformanceTest));
         bool passed = false;
         uint performancePercent = 0;
         for (int durationCounts = (int)Math.Exp(1); (durationCounts <= 25000) && !passed; durationCounts = (int)(Math.Exp(durationCounts)))
@@ -28,13 +43,13 @@ public class StringTextTest
             long stringTextConcatinationDurationTicks = GetStringTextConcatinationDurationTicks(durationCounts);
             performancePercent = 100 * (uint)stringConcatinationDurationTicks / (uint)stringTextConcatinationDurationTicks;
             passed = performancePercent >= 100;
-            Console.WriteLine("--  StringTextTest.PerformanceTest -----------------------------------------");
-            Console.WriteLine(nameof(String) + " duration is     '" + stringConcatinationDurationTicks + "' ticks.");
-            Console.WriteLine(nameof(StringText) + " duration is '" + stringTextConcatinationDurationTicks +  "' ticks.");
-            Console.WriteLine("The performance is " + performancePercent + "% with '" + durationCounts + "' concatinations.");
-            Console.WriteLine("Teststatus [" + (passed ? "PASSED" : "FAILED") + "]");
-            Console.WriteLine("The duration for " + nameof(StringText) + " shall be less than for " + nameof(String) + ".");
-            Console.WriteLine("----------------------------------------------------------------------------");
+            _log.Debug("--  StringTextTest.PerformanceTest -----------------------------------------");
+            _log.Debug(nameof(String) + " duration is     '" + stringConcatinationDurationTicks + "' ticks.");
+            _log.Debug(nameof(StringText) + " duration is '" + stringTextConcatinationDurationTicks +  "' ticks.");
+            _log.Debug("The performance is " + performancePercent + "% with '" + durationCounts + "' concatinations.");
+            _log.Debug("Teststatus [" + (passed ? "PASSED" : "FAILED") + "]");
+            _log.Debug("The duration for " + nameof(StringText) + " shall be less than for " + nameof(String) + ".");
+            _log.Debug("----------------------------------------------------------------------------");
         }
         Assert.That(passed);
     }
