@@ -5,6 +5,7 @@ using Tests.DotnetUtils.Collections;
 
 namespace DotNetUtils.Test.StringUtils;
 
+#pragma warning disable
 
 public class StringTextTest : TestBase
 {
