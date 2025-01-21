@@ -10,10 +10,10 @@ public class DictionaryUtilTest
     public void AddOrUpdateByKeyTest()
     {
         Dictionary<object, object> keyValues = null;
-        // keyValues[1] = "Test 2"; // Line would cause [System.NullReferenceException : Object reference not set to an instance of an object.]
+        // keyValues[1] = "Test 2"; // Line would cause [System.NullReferenceException : Object reference not set to an instance of an object.] // That's good!
         DictionaryUtil.AddOrUpdateByKey(keyValues, 1, "Test");      // assert no System.NullReferenceException
         keyValues = new Dictionary<object, object>();
-        // keyValues[null] = "Test";                                // This line demonstrates a null value which would cause [System.ArgumentNullException : Value cannot be null. (Parameter 'key')]
+        // keyValues[null] = "Test";                                // This line demonstrates a null value which would cause [System.ArgumentNullException : Value cannot be null. (Parameter 'key')] // That's good!
         DictionaryUtil.AddOrUpdateByKey(keyValues, null, "Test");   // assert no System.ArgumentNullException
         DictionaryUtil.AddOrUpdateByKey(keyValues, 1, "Test");      // add key=1 with value="Test"
         Assert.That(keyValues[1], Is.EqualTo("Test"));
