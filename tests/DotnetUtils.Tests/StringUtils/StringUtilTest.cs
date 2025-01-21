@@ -1,6 +1,6 @@
 using DotNetUtils.StringUtils;
 
-namespace DotNetUtils.Test.StringUtils;
+namespace DotNetUtils.Tests.StringUtils;
 
 public class StringUtilTest
 {

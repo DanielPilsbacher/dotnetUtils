@@ -4,7 +4,7 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 
-namespace DotNetUtils.Test.StringUtils;
+namespace DotNetUtils.Tests.StringUtils;
 
 public class StringTextTest
 {
