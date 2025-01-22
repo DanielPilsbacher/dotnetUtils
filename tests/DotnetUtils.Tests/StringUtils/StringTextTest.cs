@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using DotNetUtils.StringUtils;
 using NLog;
-using Tests.DotnetUtils.Collections;
+using Tests.DotnetUtils;
 
 namespace DotNetUtils.Tests.StringUtils;
 
