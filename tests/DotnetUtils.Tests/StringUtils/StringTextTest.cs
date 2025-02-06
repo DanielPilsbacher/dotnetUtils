@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Text;
 using DotNetUtils.StringUtils;
 using NLog;
 using Tests.DotnetUtils;
@@ -29,16 +30,16 @@ public class StringTextTest : TestBase
         Log.Debug("Run unittest " + nameof(StringTextTest) + "." + nameof(PerformanceTest));
         bool passed = false;
         uint performancePercent = 0;
-        for (int durationCounts = (int)Math.Exp(1); (durationCounts <= 25000) && !passed; durationCounts = (int)(Math.Exp(durationCounts)))
+        for (int durationCounts = 1; !passed && durationCounts <= 2500; durationCounts++)
         {
-            long stringConcatinationDuration = GetStringConcatinationDuration(durationCounts);
-            long stringTextConcatinationDuration = GetStringTextConcatinationDuration(durationCounts);
+            float stringConcatinationDuration = GetStringConcatinationDuration(durationCounts);
+            float stringTextConcatinationDuration = GetStringTextConcatinationDuration(durationCounts);
             performancePercent = 100 * (uint)stringConcatinationDuration / (uint)stringTextConcatinationDuration;
             passed = performancePercent >= 100;
             Log.Debug("--  StringTextTest.PerformanceTest -----------------------------------------");
             Log.Debug(nameof(String) + " duration is     '" + stringConcatinationDuration + "' ns.");
-            Log.Debug(nameof(StringText) + " duration is '" + stringTextConcatinationDuration +  "' ns.");
-            Log.Debug("The performance is " + performancePercent + "% with '" + durationCounts + "' concatinations.");
+            Log.Debug(nameof(StringText) + " duration is '" + stringTextConcatinationDuration + "' ns.");
+            Log.Debug("The performance is " + performancePercent + "% with '" + (durationCounts) + "' concatinations.");
             Log.Debug("Teststatus [" + (passed ? "PASSED" : "FAILED") + "]");
             Log.Debug("The duration for " + nameof(StringText) + " shall be less than for " + nameof(String) + ".");
             Log.Debug("----------------------------------------------------------------------------");
@@ -46,7 +47,25 @@ public class StringTextTest : TestBase
         Assert.That(passed);
     }
 
-    private static int GetStringConcatinationDuration(int durationStop)
+    [Test]
+    public void BenchmarkTest()
+    {
+        Log.Debug("Iterations\tstring\tStringBuilder\tStringText\tstring\tStringBuilder\tStringText");
+        Log.Debug("Count\tTicks\tTicks\tTicks\tIterations/Tick\tIterations/Tick\tIterations/Tick");
+        for (float counts = 1; counts <= 2500; counts++)
+        {
+            float stringConcatinationDuration = GetStringConcatinationDuration((int)counts);
+            float stringBuilderConcatinationDuration = GetStringBuilderDuration((int)counts);
+            float stringTextConcatinationDuration = GetStringTextConcatinationDuration((int)counts);
+            Log.Debug($"\t{counts}" +
+                $"\t{stringConcatinationDuration}\t{stringBuilderConcatinationDuration}\t{stringTextConcatinationDuration}" +
+                $"\t{((counts/stringConcatinationDuration)).ToString("0.00")}" +
+                $"\t{((counts /stringBuilderConcatinationDuration)).ToString("0.00")}" +
+                $"\t{((counts /stringTextConcatinationDuration)).ToString("0.00")}");
+        }
+    }
+
+    private static float GetStringConcatinationDuration(int durationStop)
     {
         Stopwatch stopwatch4String = new Stopwatch();
         stopwatch4String.Start();
@@ -56,10 +75,23 @@ public class StringTextTest : TestBase
             s += (i == 0 ? "" : ", ") + i;
         }
         stopwatch4String.Stop();
-        return stopwatch4String.Elapsed.Nanoseconds;
+        return (float)stopwatch4String.Elapsed.Ticks;
     }
 
-    private static int GetStringTextConcatinationDuration(int durationStop)
+    private static float GetStringBuilderDuration(int durationStop)
+    {
+        Stopwatch stopwatch4String = new Stopwatch();
+        stopwatch4String.Start();
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i <= durationStop; i++)
+        {
+            s.Append(i == 0 ? "" : ", ").Append(i);
+        }
+        stopwatch4String.Stop();
+        return (float)stopwatch4String.Elapsed.Ticks;
+    }
+
+    private static float GetStringTextConcatinationDuration(int durationStop)
     {
         Stopwatch stopwatch4String = new Stopwatch();
         stopwatch4String.Start();
@@ -69,6 +101,6 @@ public class StringTextTest : TestBase
             s += (i == 0 ? "" : ", ") + i;
         }
         stopwatch4String.Stop();
-        return stopwatch4String.Elapsed.Nanoseconds;
+        return (float)stopwatch4String.Elapsed.Ticks;
     }
 }
