@@ -29,14 +29,12 @@ public class StringTextTest : TestBase
         Log.Debug($"Run unittest {nameof(StringTextTest)}.{nameof(PerformanceTest)}");
         bool passed = false;
         ushort performancePercent = 0;
-        // Performance Log //Log.Debug("Duration-count|passed-boolean|String-Ticks|StringText-Ticks|Performance-%");
         for (int durationCounts = 1 ; durationCounts <= 100 && !passed; durationCounts++)
         {
             long stringConcatenationDuration = GetStringConcatinationDuration(durationCounts);
             long stringTextConcatenationDuration = GetStringTextConcatinationDuration(durationCounts);
             performancePercent = (ushort)(100 * stringConcatenationDuration / stringTextConcatenationDuration);
-            passed = performancePercent >= 100 /* Performance Log *//* || passed */;
-            // Performance Log //Log.Debug($"{durationCounts}|{passed}|{stringConcatenationDuration}|{stringTextConcatenationDuration}|{performancePercent}");
+            passed = performancePercent >= 100;
         }
         Assert.That(passed);
     }
