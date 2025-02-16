@@ -2,7 +2,7 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 
-namespace Tests.DotnetUtils;
+namespace PilsbacherDaniel.DotnetUtils.Tests;
 
 public abstract class TestBase
 {

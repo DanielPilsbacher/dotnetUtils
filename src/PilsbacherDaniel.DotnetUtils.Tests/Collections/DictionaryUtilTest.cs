@@ -1,6 +1,6 @@
-using DotNetUtils.Collections;
+using PilsbacherDaniel.DotnetUtils.Collections;
 
-namespace Tests.DotnetUtils;
+namespace PilsbacherDaniel.DotnetUtils.Tests.Collections;
 
 #pragma warning disable
 

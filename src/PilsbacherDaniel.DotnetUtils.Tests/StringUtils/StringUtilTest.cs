@@ -1,6 +1,6 @@
-using DotNetUtils.StringUtils;
+using PilsbacherDaniel.DotnetUtils.StringUtils;
 
-namespace DotNetUtils.Tests.StringUtils;
+namespace PilsbacherDaniel.DotnetUtils.Tests.StringUtils;
 
 #pragma warning disable
 

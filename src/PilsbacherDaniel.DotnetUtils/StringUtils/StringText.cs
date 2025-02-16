@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace DotNetUtils.StringUtils;
+namespace PilsbacherDaniel.DotnetUtils.StringUtils;
 
 public class StringText
 {

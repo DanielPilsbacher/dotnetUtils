@@ -45,8 +45,7 @@ Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration:
 ```
 If the tests are passing all is set up to use.
 
-##  Create project and test structure
-###  LOG entry 2024-12-07 11:42
+## Create project and test structure
 Based on [Unit testing C# with NUnit and .NET Core](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit) and [Organize your project to support both .NET Framework and .NET](https://learn.microsoft.com/en-us/dotnet/core/porting/project-structure) the project is created:
 
 ```
@@ -70,12 +69,12 @@ ren UnitTest1.cs ListUtilTest.cs
 # write testcode for ListUtilTest.cs
 cd ..
 ```
-
 ## Changes
-###  LOG entry 2025-01-06 13:57
+### LOG entry 2024-12-07 11:42
+Create §§ [Create project and test structure](#create-project-and-test-structure).
 
+###  LOG entry 2025-01-06 13:57
 Add DictionaryUtil and StringUtil.
 
 ###  LOG entry 2025-02-16 14:03
-
 Change StringText duration count for unittest.

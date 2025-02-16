@@ -1,4 +1,4 @@
-namespace DotNetUtils.Collections;
+namespace PilsbacherDaniel.DotnetUtils.Collections;
 
 /// <summary>
 /// Common development methods for Dictionary

@@ -1,4 +1,4 @@
-namespace DotNetUtils.StringUtils;
+namespace PilsbacherDaniel.DotnetUtils.StringUtils;
 
 public static class StringUtil
 {

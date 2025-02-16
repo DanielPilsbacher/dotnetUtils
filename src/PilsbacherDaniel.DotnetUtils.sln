@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetUtils", "src\DotnetUtils.csproj", "{2D6EA54F-F555-4067-A6BE-9BA4BC5667E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PilsbacherDaniel.DotnetUtils", "PilsbacherDaniel.DotnetUtils\PilsbacherDaniel.DotnetUtils.csproj", "{2D6EA54F-F555-4067-A6BE-9BA4BC5667E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetUtils.Tests", "tests\DotnetUtils.Tests.csproj", "{B9FF60BE-5AB8-4F2D-8F3B-A205E6F3C115}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{730081C9-3B16-40A9-8AD0-9218F3760808}"
-	ProjectSection(SolutionItems) = preProject
-		LICENSE = LICENSE
-		README.md = README.md
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PilsbacherDaniel.DotnetUtils.Tests", "PilsbacherDaniel.DotnetUtils.Tests\PilsbacherDaniel.DotnetUtils.Tests.csproj", "{B9FF60BE-5AB8-4F2D-8F3B-A205E6F3C115}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
