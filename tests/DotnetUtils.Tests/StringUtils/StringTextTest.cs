@@ -26,7 +26,6 @@ public class StringTextTest : TestBase
     [Test]
     public void PerformanceTest()
     {
-        Log.Debug($"Run unittest {nameof(StringTextTest)}.{nameof(PerformanceTest)}");
         bool passed = false;
         ushort performancePercent = 0;
         for (int durationCounts = 1 ; durationCounts <= 100 && !passed; durationCounts++)
