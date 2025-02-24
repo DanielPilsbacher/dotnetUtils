@@ -18,8 +18,9 @@ public class DictionaryUtilTest
         DictionaryUtil.AddOrUpdateByKey(keyValues, 1, "Test");      // add key=1 with value="Test"
         Assert.That(keyValues[1], Is.EqualTo("Test"));
         Assert.That(keyValues.Count, Is.EqualTo(1));
-        DictionaryUtil.AddOrUpdateByKey(keyValues, 2, "Test 2");    // update key=1 with value="Test 1"
-        Assert.That(keyValues[1], Is.EqualTo("Test"));
+        DictionaryUtil.AddOrUpdateByKey(keyValues, 1, "Test 1");    // update key=1 with value="Test 1"3
+        DictionaryUtil.AddOrUpdateByKey(keyValues, 2, "Test 2");    // add key=1 with value="Test 1"
+        Assert.That(keyValues[1], Is.EqualTo("Test 1"));
         Assert.That(keyValues[2], Is.EqualTo("Test 2"));
         Assert.That(keyValues.Count, Is.EqualTo(2));
     }
