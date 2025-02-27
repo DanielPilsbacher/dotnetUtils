@@ -1,8 +1,7 @@
 ﻿using NLog;
-using PilsbacherDaniel.DotnetUtils.ByteUtils;
-using PilsbacherDaniel.DotnetUtils.Tests;
+using PilsbacherDaniel.DotnetUtils.StringUtils;
 
-namespace PilsbacherDaniel.DotnetUtils.StringUtils
+namespace PilsbacherDaniel.DotnetUtils.Tests.StringUtilsTest
 {
     internal class StringUtilsTest : TestBase
     {

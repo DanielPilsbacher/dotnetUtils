@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace PilsbacherDaniel.DotnetUtils.ByteUtils;
+namespace PilsbacherDaniel.DotnetUtils.StringUtils;
 
 public static class StringUtil
 {
