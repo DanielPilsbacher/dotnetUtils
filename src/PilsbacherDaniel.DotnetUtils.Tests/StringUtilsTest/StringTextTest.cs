@@ -3,7 +3,7 @@ using PilsbacherDaniel.DotnetUtils.StringUtils;
 using NLog;
 using PilsbacherDaniel.DotnetUtils.Tests;
 
-namespace PilsbacherDaniel.DotNetUtils.Tests.StringUtils;
+namespace PilsbacherDaniel.DotNetUtils.Tests.StringUtilsTest;
 
 #pragma warning disable
 

@@ -1,14 +1,17 @@
-namespace PilsbacherDaniel.DotnetUtils.StringUtils;
+namespace PilsbacherDaniel.DotnetUtils.ByteUtils;
 
 public static class StringUtil
 {
-    public static byte[] GetBytes(string text)
+    public static bool ContainsIgnoreCase(string text, string compare)
     {
-        List<byte> bytes = new List<byte>();
-        foreach (char character in text ?? string.Empty)
+        if (text == null)
         {
-            bytes.Add((byte)character);
+            return false;
         }
-        return bytes.ToArray();
+        if (compare == null)
+        {
+            return false;
+        }
+        return text.ToLower().CompareTo(compare.ToLower()) == 0;
     }
 }
