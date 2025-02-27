@@ -1,8 +1,10 @@
+using System.Globalization;
+
 namespace PilsbacherDaniel.DotnetUtils.ByteUtils;
 
 public static class StringUtil
 {
-    public static bool ContainsIgnoreCase(string text, string compare)
+    public static bool ContainsIgnoreCase(string text, string compare, CultureInfo? cultureInfo = null)
     {
         if (text == null)
         {
@@ -12,6 +14,6 @@ public static class StringUtil
         {
             return false;
         }
-        return text.ToLower().CompareTo(compare.ToLower()) == 0;
+        return text.ToLower(cultureInfo).CompareTo(compare.ToLower(cultureInfo)) == 0;
     }
 }
