@@ -4,7 +4,7 @@ namespace PilsbacherDaniel.DotnetUtils.StringUtils;
 
 public static class StringUtil
 {
-    public static bool ContainsIgnoreCase(string text, string compare, CultureInfo? cultureInfo = null)
+    public static bool ContainsIgnoreCase(string text, string compare)
     {
         if (text == null)
         {
@@ -14,6 +14,6 @@ public static class StringUtil
         {
             return false;
         }
-        return text.ToLower(cultureInfo).CompareTo(compare.ToLower(cultureInfo)) == 0;
+        return text.Contains(compare, StringComparison.OrdinalIgnoreCase);
     }
 }
