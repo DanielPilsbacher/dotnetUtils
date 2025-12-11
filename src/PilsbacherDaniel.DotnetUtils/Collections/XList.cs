@@ -17,7 +17,7 @@ public class XList<T> : List<T>
             }
             if (index >= Count)
             {
-                int count = Count;    // counter migth change by adding values
+                int count = Count;    // counter might change by adding values
                 for (int i = 0; i <= index - count; i++)
                 {
                     Add(default!);
@@ -27,3 +27,4 @@ public class XList<T> : List<T>
         }
     }
 }
+
